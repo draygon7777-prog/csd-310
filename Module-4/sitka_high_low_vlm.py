@@ -2,8 +2,11 @@ import csv
 from datetime import datetime
 
 from matplotlib import pyplot as plt
+from matplotlib import Path
 
-filename = 'sitka_weather_2018_simple.csv'
+script_dir = Path(__file__).resolve().parent
+
+filename = script_dir / 'sitka_weather_2018_simple.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
@@ -35,6 +38,8 @@ while exit_command not in user_input.lower():
     elif user_input.lower() == 'lows':
         ax.plot(dates, lows, c='blue')
         plt.title("Daily low temperatures - 2018", fontsize=24)
+    elif user_input.lower() == 'exit':
+        break
     else:
         print('Please input a valid response.')
 
