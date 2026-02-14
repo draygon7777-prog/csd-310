@@ -15,5 +15,5 @@ while True:
     if language == 'q':
         break
 
-    formatted_city = get_formated_city(city, country)
+    formatted_city = get_formated_city(city, country, population, language)
     print(f"\tFormatted city info: {formatted_city}")
