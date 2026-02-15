@@ -1,0 +1,6 @@
+import json
+
+with open('Student.json') as file:
+    student = json.load(file)
+
+print(type(student))
